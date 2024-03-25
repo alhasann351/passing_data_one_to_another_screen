@@ -25,10 +25,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -41,10 +41,39 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.blue,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: TextField(
+                  controller: nameController,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 50,
+                width: 150,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  onPressed: () {},
+                  child: const Text(
+                    'Pass Data',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
