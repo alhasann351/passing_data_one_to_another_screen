@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:passing_data_one_to_another_screen/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,7 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 150,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen(nameController.text.toString()),));
+                  },
                   child: const Text(
                     'Pass Data',
                     style: TextStyle(
